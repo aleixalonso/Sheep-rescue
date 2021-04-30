@@ -1,2 +1,2 @@
-# sheep-rescue
+# Sheep-rescue
 Sheep rescue Unity Game
