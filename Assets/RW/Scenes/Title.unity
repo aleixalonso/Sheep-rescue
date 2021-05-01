@@ -1789,8 +1789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blueHayMachine: {fileID: 468211495}
-  yellowHayMachine: {fileID: 218564493}
-  redHayMachine: {fileID: 1038119542}
+  yellowHayMachine: {fileID: 1038119542}
+  redHayMachine: {fileID: 218564493}
 --- !u!1001 &2093652740
 PrefabInstance:
   m_ObjectHideFlags: 0
