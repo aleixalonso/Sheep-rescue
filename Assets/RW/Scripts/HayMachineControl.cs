@@ -10,6 +10,7 @@ public class HayMachineControl : MonoBehaviour
     float measureTime = 0;
 
     public GameObject hayShootObject;
+    public Transform haySpawnpoint;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,6 @@ public class HayMachineControl : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(hayShootObject, transform.position, Quaternion.identity, transform);
+        Instantiate(hayShootObject, haySpawnpoint.position, Quaternion.identity);
     }
 }
