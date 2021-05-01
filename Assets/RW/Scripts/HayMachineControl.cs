@@ -12,10 +12,37 @@ public class HayMachineControl : MonoBehaviour
     public GameObject hayShootObject;
     public Transform haySpawnpoint;
 
+    public Transform modelParent; // 1
+    // 2
+    public GameObject blueModelPrefab;
+    public GameObject yellowModelPrefab;
+    public GameObject redModelPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
         measureTime = Time.time;
+        LoadModel();
+    }
+
+    private void LoadModel()
+    {
+        Destroy(modelParent.GetChild(0).gameObject); // 1
+
+        switch (GameSettings.hayMachineColor) // 2
+        {
+            case HayMachineColor.Blue:
+                Instantiate(blueModelPrefab, modelParent);
+                break;
+
+            case HayMachineColor.Yellow:
+                Instantiate(yellowModelPrefab, modelParent);
+                break;
+
+            case HayMachineColor.Red:
+                Instantiate(redModelPrefab, modelParent);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -45,5 +72,6 @@ public class HayMachineControl : MonoBehaviour
     void Shoot()
     {
         Instantiate(hayShootObject, haySpawnpoint.position, Quaternion.identity);
+        SoundManager.Instance.PlayShootClip();
     }
 }
